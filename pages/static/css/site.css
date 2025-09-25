@@ -1,0 +1,38 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;              /* put links side by side */
+    justify-content: center;    /* center the links */
+    gap: 2rem;                  /* space between them */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9800;
+}
+
+
+
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+    color: #222;
+}
