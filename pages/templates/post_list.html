@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+{% block title %} 
+    {{ title }} 
+{% endblock title%} 
+{%block content %}
+    <h1>Post ({{ posts.count }})</h1>
+    {% for post in posts %}
+        <article>
+            <h2>{{ post.title }}</h2>
+            <span><small>Posted on: {{ post.created_at|timesince }}</small></span>
+            <p>{{ post.body }}</p>
+            <p><strong>Comments ({{ post.comments.count }})</strong></p>
+            {% for comment in post.comments.all %}
+            <ul>
+                <li><strong> {{comment.author}}: </strong> {{ comment.body }} | {{comment.created_at|timesince}} ago.</li>
+            </ul>
+            {% empty %}
+                <p>No Comment available.</p>
+            {% endfor %}
+        </article>
+        <hr>
+    {% empty %}
+        <p>No posts available.</p>
+    {% endfor %}
+{%endblock content%}
+    
